@@ -1,0 +1,80 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+              name="viewport">
+        <meta content="ie=edge" http-equiv="X-UA-Compatible">
+        <title>Classroom Utilities</title>
+        <link href="landing.css" rel="stylesheet">
+        <script defer src="group_gen.js"></script>
+        <script defer src="class_layout.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>GCU - Classroom Utilities</h1>
+            <nav>
+                <ul>
+                    <li id="group_gen_button"><p>Group Generator</p></li>
+                    <li id="class_layout_button"><p>Class Layout</p></li>
+                </ul>
+            </nav>
+            <div></div>
+        </header>
+        <section id="group_gen">
+            <div class="ui_bar">
+                <span class="input">
+                    <label for="class_selector">Current Classroom:</label>
+                    <select id="class_selector" name="class_selector"></select>
+                </span>
+
+                <span class="input">
+                    <label for="size_spinner">Group Size:</label>
+                    <input id="size_spinner" min="1" name="size_spinner" style="width: 50px;" type="number" value="2"/>
+                </span>
+                <button id="gen_groups">Generate</button>
+                <span class="input">
+                    <label for="extra_handler">Handle Uneven Groups:</label>
+                    <select id="extra_handler" name="extra_handler">
+                        <option value="disperse">Larger Groups</option>
+                        <option value="nothing">Nothing</option>
+                        <option value="shrink">Smaller Groups</option>
+                    </select>
+                </span>
+                <label for="real_classes">Use Real Classes: </label>
+                <input checked="false" id="real_classes" type="checkbox">
+            </div>
+            <div id="group_wrapper">
+                <div id="groups"></div>
+            </div>
+        </section>
+
+        <section id="class_layout">
+            <div class="ui_bar">
+                <button id="rectangle_creator">Add Rectangle</button>
+                <button id="circle_creator">Add Circle</button>
+                <label for="width_spinner">Width:</label>
+                <input id="width_spinner" min="10" name="width_spinner" style="width: 50px;" type="number" value="20"/>
+                <label for="height_spinner">Height:</label>
+                <input id="height_spinner" min="10" name="height_spinner" style="width: 50px;" type="number" value="20"/>
+                <label for="colour_selector">Color: </label>
+                <select id="colour_selector" name="colour_selector">
+                    <option value="#782F1F">Brown</option>
+                    <option value="#FFFFFF">White</option>
+                    <option value="#000000">Black</option>
+                    <option value="#A97F18">Gold</option>
+                    <option value="#FF5050">Red</option>
+                </select>
+                <label for="seat_box">Is a Seat: </label>
+                <input checked="true" id="seat_box" type="checkbox">
+                <button id="clear">Clear</button>
+                <button id="place_students">Place Students</button>
+            </div>
+            <div id="canvas_container">
+                <canvas>
+
+                </canvas>
+            </div>
+
+        </section>
+    </body>
+</html>

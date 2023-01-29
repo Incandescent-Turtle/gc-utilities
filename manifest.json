@@ -1,16 +1,32 @@
 {
   "manifest_version": 3,
-  "name": "Hello Extensions",
-  "description": "Base Level Extension",
+  "name": "GCU - Classroom Utilities",
+  "description": "An extension to extend the functionality of google classroom, and make it easier to manage your classroom",
   "version": "1.0",
   "action": {
-    "default_popup": "hello.html",
-    "default_icon": "hello_extensions.png"
+    "default_icon": "icon.png"
   },
   "content_scripts": [
     {
-      "matches": ["classroom.google.com/u/0/c*"],
-      "js": ["content-script.js"]
+      "matches": ["https://classroom.google.com/*"],
+      "js": ["content-script.js"],
+      "css": ["content-script.css"]
     }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "key": "MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCdb38Y/LxHqFRjoVUyY1+1tm4CCPm/FreFXjiZYSqOZx+Sy/dq/uFtmI+tSEHkE3xyvegsi7EvDe14tr0U0pVChQ08RlukyeH82vG+xop0K5kbZB48LYf0HYkUvOOWHebrNjru+y8Jn97oo9N4/NE9Sypnfcp6VJ3Da34AHJoJmhQqtOWBZNNeu+vrnIewR6j9IpIDrmmmp3WS4CZtuElahm0AyjRHuhcnUpDSZD69RFF15hIDhY7q0u1s2ATtI7c9+qfsT/++XL/65CqeYq9U68YXG8UDy/03txFUP5wLPaKGR2ayI/d62FAU/SflA8m7XfEV4ghch5ZTJ2446ecnAgMBAAECggEAJOZLm08tT/xHnzxijBdXiO8TtJ1m799Cr1sol+Z6w3qvH0h4GpdXvci6sCoV63+XtQsGvl4VbspsZNUr1xQOUNN/iSeSdjqtIYctjwHY1KadUZqzLXacfV5o0Tf+faJPi8SfpoCwAyj55Xv0ZlCXOC8EZtJIYUiw22s30o3hmqsoSWj50j3xI1/3zf9yHbQiVYoYk5N1eOSuoCx7w1XMeyWl1K1NimVmgrxGhHB2gf+j446xfABPsduZMsxfdyNQwtSbYfvy/MK8yyZOqVLLCeGWuDPBB9JxuwN1keDrcWXOGnD34E9XjMI3x0efvSyqPU7+A5fmJso+J6RJCfGj3QKBgQDdtfVPOzWgjEg3w/coh79L/x9BVtcSzMjVVKkitE30/ZK9HZe2eW/MfGqGJnfPXPQafnVmrA6uYuxIEMsQ5EprRLh9xE0zESRPfl2sRdkaBcjG038dSp2Njs5AJGfbNpvq/IF1PXRLXxCsVarhvL2sa0yuFiZ/QSkvXGcQbfOLMwKBgQC1yLuiHsGapZF9zqULeajA0+g7Eq/wktHCZxQTN+1HQY8ZWohkserHmDgLD0VKmEAvC/8UpLC0i9AHcQHOvFAz8m+Vqv4okfWS8g2eBqYxZI8TRFZcpkhNFi1/MTfJUzTv6ECVeqpswCUgrTk9wKungBhn9oamXpXCeJ1n+vdUPQKBgEmzpTqTej5Go/M1x8HHboY65w73aUOso86W+Cq7OXcJnHAVmEtmjw2xBlBWFVnvko4EH87jv3WlGNrUCk0xNrP2AkZ8rRUey61JWqZcCdGmvpmp0QXRuhJGuLWF5KhwvOAe1II+zZwInChNyiKEdaENgk4UuvNum9xMoU5K3r0VAoGAJMQnpv9/es634XEVEoAVsIJret8ptIeNYztD5Ssvk3TgA2m7IlqVuK7BzwLUqeSnPpy3h65TiwCoH4ksq2qM8iS7itLdusjimUjZljeUD3NeOLBeoziCcQzmQM5skQyCLW+U+Gap53rpR3WhmSrJzQPsa8KBs054DbAlbe1lbqUCgYEAq3MEl3QgB7UQ4nob9uNNKtjrwV/FhgXzYzc7BNeDOhaj8gdwIhrM/Q7oYXxFAANsMWpvXp+pyaNRLzKItJx22ezYWzzuOV38qQnfeqljj2w+S7QSzE/IbOBXCGtKgtiMvzHSzoylzqY6opVpmxrVJSgfdHyCHEsJtdZoCA/jvWs=",
+  "oauth2": {
+    "client_id": "825544639595-8segfm42rq9ocgjpli85k5angrf6d49p.apps.googleusercontent.com",
+    "scopes":[
+      "https://www.googleapis.com/auth/classroom.courses.readonly",
+      "https://www.googleapis.com/auth/classroom.rosters.readonly"
+    ]
+  },
+  "permissions": [
+    "identity",
+    "tabs",
+    "storage"
   ]
 }

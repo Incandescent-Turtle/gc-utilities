@@ -1,0 +1,157 @@
+html {
+    color: #5f6368;
+    box-sizing: border-box;
+    font-family: "Google Sans",Roboto,Arial,sans-serif;
+}
+
+:root {
+    font-size: 1.2em;
+}
+
+h1 {
+    font-size: 2rem;
+    margin:10px;
+}
+
+#group_wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+#groups {
+    background-color: #ffffff;
+    margin-top: 1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1em;
+    width:66%
+}
+
+.group {
+    border: 2px solid black;
+    padding: 0 5px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.names {
+    display: grid;
+    grid-auto-flow: row;
+    min-height: 1em;
+}
+
+.names p {
+    cursor: move;
+    margin: .1em;
+    padding: .1em;
+    white-space: nowrap;
+    overflow: hidden;
+    background-color: hsl(0, 0%, 90%);
+}
+
+.ui_bar {
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+label {
+    font-size: 15px;
+    vertical-align: bottom;
+}
+
+input {
+    vertical-align: bottom;
+
+}
+.input {
+    margin-left: 10px;
+    margin-right: 10px;
+    vertical-align: bottom;
+}
+
+.group_size {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top:auto;
+}
+
+.names p:hover:not(.dragging, .selected) {
+    background-color: rgba(100, 0, 0, 0.1);
+}
+
+.dragging {
+    background-color: rgba(255, 0, 0, 0.1) !important;
+}
+
+.selected:not(.dragging) {
+    background-color: orange;
+}
+
+header {
+    display: flex;
+    border-bottom: 1px solid black;
+    margin-bottom: 10px;
+}
+
+header > * {
+    flex-grow: 1;
+    width:0;
+}
+
+nav {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+ul {
+    display: flex;
+    /*justify-content: center;*/
+    gap: 20px;
+    padding: 10px;
+]}
+
+li {
+    list-style-type: none;
+    background-color: #cccbcb;
+    padding-inline: 15px;
+    margin:0;
+    border-radius: 5px;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+li > p {
+    margin:0;
+    text-align: center;
+}
+
+li:hover {
+    opacity: .6;
+}
+
+section#class_layout {
+    display: none;
+}
+
+canvas {
+    width: 400px;
+    height:400px;
+    border: 1px solid black;
+    margin: 10px;
+}
+
+#canvas_container {
+    display: flex;
+    justify-content: center;
+}
